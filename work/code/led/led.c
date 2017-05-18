@@ -14,7 +14,9 @@ int main(void )
         return 1;
     }
 
-    pinMode(LEDPin,OUTPUT);
+    pinMode(LEDRPin,OUTPUT);
+    pinMode(LEDGPin,OUTPUT);
+    pinMode(LEDBPin,OUTPUT);
 
     while(1)
     {
