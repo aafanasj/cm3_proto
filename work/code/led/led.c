@@ -30,6 +30,7 @@ int main(void )
         if(digitalRead(ButtonPin) == 0)
         {
             digitalWrite(BuzzerPin, LOW);
+            printf("Button is pressed\r\n");
             delay(100);
             digitalWrite(BuzzerPin, HIGH);
         }
