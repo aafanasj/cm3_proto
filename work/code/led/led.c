@@ -1,7 +1,9 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define LEDPin      4
+#define LEDRPin      4
+#define LEDGPin      5
+#define LEDBPin      6
 
 int main(void )
 {
@@ -16,14 +18,35 @@ int main(void )
 
     while(1)
     {
-        digitalWrite(LEDPin, LOW);
-        printf("Led On...\r\n");
+        digitalWrite(LEDRPin, HIGH);
+        digitalWrite(LEDGPin, HIGH);
+        digitalWrite(LEDBPin, HIGH);
+        digitalWrite(LEDRPin, LOW);
+        printf("Led R On...\r\n");
         delay(500);
 
-        digitalWrite(LEDPin, HIGH);
-        printf("...Led Off\r\n");
+        digitalWrite(LEDRPin, HIGH);
+        digitalWrite(LEDGPin, HIGH);
+        digitalWrite(LEDBPin, HIGH);
+        digitalWrite(LEDGPin, LOW);
+        printf("Led G On...\r\n");
         delay(500);
 
+        digitalWrite(LEDRPin, HIGH);
+        digitalWrite(LEDGPin, HIGH);
+        digitalWrite(LEDBPin, HIGH);
+        digitalWrite(LEDBPin, LOW);
+        printf("Led B On...\r\n");
+        delay(500);
+
+        digitalWrite(LEDRPin, HIGH);
+        digitalWrite(LEDGPin, HIGH);
+        digitalWrite(LEDBPin, HIGH);
+        digitalWrite(LEDRPin, LOW);
+        digitalWrite(LEDGPin, LOW);
+        digitalWrite(LEDBPin, LOW);
+        printf("Leds RGB On...\r\n");
+        delay(500);
     }
 
     return 0;
