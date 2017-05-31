@@ -6,6 +6,7 @@
 #define LEDBPin      6
 #define BuzzerPin    8
 #define ButtonPin    7
+#define PIRPin       9
 
 int main(void )
 {
@@ -25,8 +26,18 @@ int main(void )
     pinMode(ButtonPin, INPUT);      // Set button as INPUT
 //    pullUpDnControl(ButtonPin, PUD_UP); // Enable pull-up resistor on button
 
+    pinMode(PIRPin, INPUT);      // Set button as INPUT
+
     while(1)
     {
+        if(digitalRead(PIRPin) == 1)
+        {
+            digitalWrite(BuzzerPin, LOW);
+            printf("Motion is detected\r\n");
+            delay(100);
+            digitalWrite(BuzzerPin, HIGH);
+        }
+
         if(digitalRead(ButtonPin) == 0)
         {
             digitalWrite(BuzzerPin, LOW);
