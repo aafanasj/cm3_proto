@@ -1,7 +1,7 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define ButtonPin    7
+#define PIRPin       9
 
 int main(void )
 {
@@ -12,18 +12,17 @@ int main(void )
         return 1;
     }
 
-    pinMode(ButtonPin, INPUT);      // Set button as INPUT
-//    pullUpDnControl(ButtonPin, PUD_UP); // Enable pull-up resistor on button
+    pinMode(PIRPin, INPUT);      // Set button as INPUT
 
     while(1)
     {
-        if(digitalRead(ButtonPin) == 0)
+        if(digitalRead(PIRPin) == 1)
         {
             delay(100);
 
-            if(digitalRead(ButtonPin) == 0)
+            if(digitalRead(PIRPin) == 1)
             {
-                printf("Button is pressed\r\n");
+                printf("Motion is detected\r\n");
             }
         }
 
@@ -32,5 +31,4 @@ int main(void )
 
     return 0;
 }
-
 
