@@ -16,8 +16,10 @@ int main(void )
 
     while(1)
     {
-        delay(1000);
+        delay(900);
         digitalWrite(BuzzerPin, HIGH);
+        delay(100);
+        digitalWrite(BuzzerPin, LOW);
     }
 
     return 0;
