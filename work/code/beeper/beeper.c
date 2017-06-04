@@ -7,12 +7,14 @@ int main(void )
 {
     if(wiringPiSetup() == -1)
     {
-        printf("Setup wirinPi Failed !\r\n");
+        printf("Beeper service failed !\r\n");
 
         return 1;
     }
 
     pinMode(BuzzerPin,OUTPUT);
+
+    printf("Beeper service started !\r\n");
 
     while(1)
     {
