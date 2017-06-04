@@ -31,7 +31,7 @@ int main(void )
                 printf("Motion is detected\r\n");
             }
         }
-        else
+        else if(digitalRead(PIRPin) == 0)
         {
             is_motion_detected = FALSE;
         }
