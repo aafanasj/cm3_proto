@@ -5,6 +5,8 @@
 
 int main(void )
 {
+    bool is_motion_detected = FALSE;
+
     if(wiringPiSetup() == -1)
     {
         printf("PIR service failed !\r\n");
@@ -18,14 +20,20 @@ int main(void )
 
     while(1)
     {
-        if(digitalRead(PIRPin) == 1)
+        if(digitalRead(PIRPin) == 1 && is_motion_detected != TRUE)
         {
             delay(100);
 
             if(digitalRead(PIRPin) == 1)
             {
+                is_motion_detected = TRUE;
+
                 printf("Motion is detected\r\n");
             }
+        }
+        else
+        {
+            is_motion_detected = FALSE;
         }
 
         delay(100);
