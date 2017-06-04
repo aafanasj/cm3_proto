@@ -5,7 +5,7 @@
 
 int main(void )
 {
-    bool is_motion_detected = FALSE;
+    int is_motion_detected = FALSE;
 
     if(wiringPiSetup() == -1)
     {
