@@ -1,4 +1,4 @@
-all: beeper
+all: beeper.o
 
-beeper: beeper.c
-	gcc -o beeper beeper.c -lwiringPi
+beeper.o: beeper.c
+	gcc -o beeper.o beeper.c -lwiringPi
